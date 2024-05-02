@@ -1,0 +1,38 @@
+component GCovLine inherits Rectangle{
+  in property <int> line-num;
+  in property <string> line-contents;
+
+
+  HorizontalLayout {
+    spacing: 2px;
+    alignment: stretch;
+
+    Rectangle {
+      background: lightgray;
+      width: 24px;
+      Text {text: line-num; color: black;}
+    }
+    Rectangle {
+      background: dimgray;
+
+      HorizontalLayout {
+        padding: 2px;
+        Text {text: line-contents;}
+      }
+    }
+  }
+}
+
+export component App inherits Window {
+  preferred-width: 800px;
+  preferred-height: 600px;
+  title: @tr("GCOV Viewer");
+  background: #5758a383;
+
+  VerticalLayout {
+    width: 100%;
+    alignment: start;
+
+    GCovLine {line-num: 0; line-contents: "hello";}
+  }
+}
