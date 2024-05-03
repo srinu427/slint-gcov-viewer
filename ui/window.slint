@@ -9,15 +9,15 @@ component GCovLine inherits Rectangle{
 
     Rectangle {
       background: lightgray;
-      width: 24px;
-      Text {text: line-num; color: black;}
+      width: 12mm;
+      Text {text: line-num; color: black; font-size: 13pt;}
     }
     Rectangle {
       background: dimgray;
 
       HorizontalLayout {
-        padding: 2px;
-        Text {text: line-contents;}
+        padding: 4px;
+        Text {text: line-contents; font-size: 13pt;}
       }
     }
   }
@@ -27,7 +27,7 @@ export component App inherits Window {
   preferred-width: 800px;
   preferred-height: 600px;
   title: @tr("GCOV Viewer");
-  background: #5758a383;
+  background: #353535f8;
 
   VerticalLayout {
     width: 100%;
